@@ -1,0 +1,25 @@
+{
+  "name": "Burger-Homework",
+  "version": "1.0.0",
+  "description": "<!-- Burger Homework is optional, but it isn't optional for learning!  -->",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aMeizing1125/Burger-Homework.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aMeizing1125/Burger-Homework/issues"
+  },
+  "homepage": "https://github.com/aMeizing1125/Burger-Homework#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "mysql": "^2.17.1"
+  }
+}
