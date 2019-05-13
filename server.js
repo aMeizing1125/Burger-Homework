@@ -1,21 +1,30 @@
-var orm = require('orm');
-var mysql = require('mysql');
-var express = require('express');
-var exphbs  = require('express-handlebars');\
+var PORT = process.env.PORT || 3000;
+
+var express = require("express");
 
 var app = express();
 
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'root',
-  port     : 3307,
-  database : 'databaseReplaceThis'
+var orm = require("./config/orm");
+
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static("public"));
+
+// Parse application body as JSON
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+//Routing
+var routes = require("./controllers/burgers_controller");
+app.use(routes);
+
+// Start our server so that it can begin listening to client requests.
+app.listen(PORT, function() {
+  // Log (server-side) when our server has started
+  console.log("Server listening on: http://localhost:" + PORT);
 });
- 
-// connection.connect();
- 
-// connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
-//   if (error) throw error;
-//   console.log('The solution is: ', results[0].solution);
-// });

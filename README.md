@@ -54,34 +54,28 @@ App Setup
 <!-- Install the Handlebars npm package: npm install express-handlebars. -->
 <!-- Install MySQL npm package: npm install mysql. -->
 
-Require the following npm packages inside of the server.js file:
+<!-- Require the following npm packages inside of the server.js file: -->
+<!-- express -->
+
+<!-- DB Setup -->
 
 
-express
-
-
-
-
-
-DB Setup
-
-
-Inside your burger directory, create a folder named db.
-In the db folder, create a file named schema.sql. Write SQL queries this file that do the following:
+<!-- Inside your burger directory, create a folder named db. -->
+<!-- In the db folder, create a file named schema.sql. Write SQL queries this file that do the following: -->
 
 
 
-Create the burgers_db.
-Switch to or use the burgers_db.
-Create a burgers table with these fields:
+<!-- Create the burgers_db. -->
+<!-- Switch to or use the burgers_db. -->
+<!-- Create a burgers table with these fields: -->
 
 
 
-id: an auto incrementing int that serves as the primary key.
+<!-- id: an auto incrementing int that serves as the primary key. -->
 
-burger_name: a string.
+<!-- burger_name: a string. -->
 
-devoured: a boolean.
+<!-- devoured: a boolean. -->
 
 
 

@@ -1,0 +1,42 @@
+<div class="body">
+  <div class="burgerList">
+    <h3>List of Burgers to Try</h3>
+    <div class="notDevouredList">
+      {{#each notEaten}}
+        <div>{{burger_name}}<button id="{{id}}" class="devoured">Eat Me</button></div>
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="inputArea">
+    <h3>Add Burgers to the List</h3>
+      <input id="burgerInput" type="text" required>
+      <button id="submit" type="submit">Submit</button>
+  </div>
+  
+  <div class="triedBurgers">
+    <h3>Burgers I have Devoured</h3>
+    <div class="devouredList">
+      {{#each eaten}}
+      <div>{{burger_name}}</div>
+      {{/each}}
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  $('.devoured').on("click", function() {
+    var thisButton = $(this);
+    var burgerID = thisButton.attr('id');
+    var objBurgerID = {id: burgerID};
+    $.post("/eatBurger", objBurgerID, function(response) {
+      if(response) {
+        console.log(response);
+      } 
+      console.log("data has been sent.");
+    })
+  })
+
+</script>
