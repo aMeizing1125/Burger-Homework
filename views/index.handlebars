@@ -1,5 +1,6 @@
-<div class="body">
-  <div class="burgerList">
+<div class="body container">
+
+  <div class="burgerList item">
     <h3>List of Burgers to Try</h3>
     <div class="notDevouredList">
       {{#each notEaten}}
@@ -8,15 +9,20 @@
     </div>
   </div>
 
-  <div class="inputArea">
+  <div class="lettuce">
+    
+  </div>
+
+  <div class="inputArea item">
     <h3>Add Burgers to the List</h3>
       <form>
         <input id="burgerInput" type="text" required>
+        <br>
         <button id="submit" type="submit">Submit</button>
       </form>
   </div>
   
-  <div class="triedBurgers">
+  <div class="triedBurgers item">
     <h3>Burgers I have Devoured</h3>
     <div class="devouredList">
       {{#each eaten}}

@@ -6,7 +6,7 @@ var burger = require("../models/burger");
 
 //we use get to send things to the client/front end. 
 router.get('/', function (request, response) {
-  console.log("test");
+  // console.log("test");
 
   burger.selectAll(function (data) {
     // console.log(data);
@@ -22,13 +22,13 @@ router.get('/', function (request, response) {
       }
     })
 
-    console.log(burgerList);
-    console.log(devouredList);
+    // console.log(burgerList);
+    // console.log(devouredList);
 
     handlebarObject.notEaten = burgerList;
     handlebarObject.eaten = devouredList;
 
-    console.log(handlebarObject);
+    // console.log(handlebarObject);
 
     response.render("index", handlebarObject);
 
@@ -37,13 +37,13 @@ router.get('/', function (request, response) {
 
 //post is meant for the client to send things to the server/backend. 
 router.post("/eatBurger", function (request, response) {
-  console.log("post working");
+  // console.log("post working");
   var burgerID = request.body.id;
-  console.log(burgerID);
+  // console.log(burgerID);
 
   // This the problem--------------
   burger.updateOne(burgerID, function(response) {
-    console.log(response);
+    // console.log(response);
   })
 
 })
@@ -51,15 +51,13 @@ router.post("/eatBurger", function (request, response) {
 router.post("/newBurger", function(request, response) {
   // console.log("newBurger post working");
   var burgerName = request.body.burgerName;
-  console.log(burgerName);
+  // console.log(burgerName);
 
   burger.insertOne(burgerName, function(response) {
-    console.log(response);
+    // console.log(response);
   })
   
 })
-
-
 
 
 module.exports = router; 
