@@ -10,8 +10,10 @@
 
   <div class="inputArea">
     <h3>Add Burgers to the List</h3>
-      <input id="burgerInput" type="text" required>
-      <button id="submit" type="submit">Submit</button>
+      <form>
+        <input id="burgerInput" type="text" required>
+        <button id="submit" type="submit">Submit</button>
+      </form>
   </div>
   
   <div class="triedBurgers">
@@ -37,6 +39,24 @@
       } 
       console.log("data has been sent.");
     })
+
+    //Reload page
+    document.location.reload()
+  })
+
+  $('#submit').on("click", function(event) {
+    event.preventDefault();
+    var newBurger = $('#burgerInput').val().trim();
+    var objNewBurger = {burgerName: newBurger};
+    console.log(newBurger);
+    $.post("/newBurger", objNewBurger, function(response) {
+      if(response) {
+        console.log(response);
+      } 
+      console.log("data has been sent.");
+    })
+
+    document.location.reload();
   })
 
 </script>

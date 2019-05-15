@@ -31,7 +31,7 @@ var orm = {
      queryString += `UPDATE ${table} SET ${column} = '${value}' `;
      queryString += `WHERE id = ${id};`
 
-    //  console.log(queryString);
+   //   console.log(queryString);
 
      connection.query(queryString, function (err, result) {
         if (err) {
